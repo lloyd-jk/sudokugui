@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/sudokugui.git/static/css/main.d4681dbc.chunk.css",
-    "main.js": "/sudokugui.git/static/js/main.8df0c064.chunk.js",
-    "main.js.map": "/sudokugui.git/static/js/main.8df0c064.chunk.js.map",
-    "runtime-main.js": "/sudokugui.git/static/js/runtime-main.fd85b847.js",
-    "runtime-main.js.map": "/sudokugui.git/static/js/runtime-main.fd85b847.js.map",
-    "static/js/2.5b9db223.chunk.js": "/sudokugui.git/static/js/2.5b9db223.chunk.js",
-    "static/js/2.5b9db223.chunk.js.map": "/sudokugui.git/static/js/2.5b9db223.chunk.js.map",
-    "static/js/3.d42d93da.chunk.js": "/sudokugui.git/static/js/3.d42d93da.chunk.js",
-    "static/js/3.d42d93da.chunk.js.map": "/sudokugui.git/static/js/3.d42d93da.chunk.js.map",
-    "index.html": "/sudokugui.git/index.html",
-    "static/css/main.d4681dbc.chunk.css.map": "/sudokugui.git/static/css/main.d4681dbc.chunk.css.map",
-    "static/js/2.5b9db223.chunk.js.LICENSE.txt": "/sudokugui.git/static/js/2.5b9db223.chunk.js.LICENSE.txt",
-    "static/media/index.css": "/sudokugui.git/static/media/Font.8328c8e5.ttf"
+    "main.css": "/sudokugui/static/css/main.9ebc0db9.chunk.css",
+    "main.js": "/sudokugui/static/js/main.3a57ef3b.chunk.js",
+    "main.js.map": "/sudokugui/static/js/main.3a57ef3b.chunk.js.map",
+    "runtime-main.js": "/sudokugui/static/js/runtime-main.e7b3d15e.js",
+    "runtime-main.js.map": "/sudokugui/static/js/runtime-main.e7b3d15e.js.map",
+    "static/js/2.5b9db223.chunk.js": "/sudokugui/static/js/2.5b9db223.chunk.js",
+    "static/js/2.5b9db223.chunk.js.map": "/sudokugui/static/js/2.5b9db223.chunk.js.map",
+    "static/js/3.d42d93da.chunk.js": "/sudokugui/static/js/3.d42d93da.chunk.js",
+    "static/js/3.d42d93da.chunk.js.map": "/sudokugui/static/js/3.d42d93da.chunk.js.map",
+    "index.html": "/sudokugui/index.html",
+    "static/css/main.9ebc0db9.chunk.css.map": "/sudokugui/static/css/main.9ebc0db9.chunk.css.map",
+    "static/js/2.5b9db223.chunk.js.LICENSE.txt": "/sudokugui/static/js/2.5b9db223.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/sudokugui/static/media/Font.8328c8e5.ttf"
   },
   "entrypoints": [
-    "static/js/runtime-main.fd85b847.js",
+    "static/js/runtime-main.e7b3d15e.js",
     "static/js/2.5b9db223.chunk.js",
-    "static/css/main.d4681dbc.chunk.css",
-    "static/js/main.8df0c064.chunk.js"
+    "static/css/main.9ebc0db9.chunk.css",
+    "static/js/main.3a57ef3b.chunk.js"
   ]
 }
