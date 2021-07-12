@@ -1,8 +1,8 @@
 {
-  "homepage": "https://lloyd-jk.github.io/sudokugui.git",
+  "homepage": "https://lloyd-jk.github.io/sudokugui",
   "name": "sudokugui",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "dependencies": {
     "@material-ui/core": "^4.12.1",
     "@material-ui/data-grid": "^4.0.0-alpha.33",
