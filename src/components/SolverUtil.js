@@ -1,40 +1,4 @@
-// function find_emptybox() {
-//   for (let x = 0; x < 10; x++) {
-//     for (let y = 0; y < 10; y++) {
-//       if (matrix[x][y] == 0) {
-//         return [x, y];
-//       }
-//     }
-//   }
-//   return false;
-// }
-
-// function check_ass(x, position) {
-//   for (let i = 0; i < array.length; i++) {
-//     const element = array[i];
-//   }
-// }
-
-// export function SolverUtil(useMatrix, matrix) {
-//   console.log("we got here");
-//   var empty_indice = find_emptybox();
-//   if (!empty_indice) {
-//     return true;
-//   }
-//   for (let x = 0; x < 10; x++) {}
-// }
 export function SolverUtil(matrix, setMatrix) {
-  const _board = [
-    [".", "9", ".", ".", "4", "2", "1", "3", "6"],
-    [".", ".", ".", "9", "6", ".", "4", "8", "5"],
-    [".", ".", ".", "5", "8", "1", ".", ".", "."],
-    [".", ".", "4", ".", ".", ".", ".", ".", "."],
-    ["5", "1", "7", "2", ".", ".", "9", ".", "."],
-    ["6", ".", "2", ".", ".", ".", "3", "7", "."],
-    ["1", ".", ".", "8", ".", "4", ".", "2", "."],
-    ["7", ".", "6", ".", ".", ".", "8", "1", "."],
-    ["3", ".", ".", ".", "9", ".", ".", ".", "."],
-  ];
   sodokoSolver(matrix);
   console.log("solved", matrix);
   setMatrix(matrix);

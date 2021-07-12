@@ -3,9 +3,13 @@ import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
 import TableRow from "@material-ui/core/TableRow";
-import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import { SolverUtil } from "./SolverUtil";
+import ClearIcon from "@material-ui/icons/Clear";
+import IconButton from "@material-ui/core/IconButton";
+import Tooltip from "@material-ui/core/Tooltip";
+import { useStyles } from "./MainPageStyles";
+
 const MainPage = () => {
   const [matrix, setMatrix] = useState([
     [0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -22,9 +26,6 @@ const MainPage = () => {
   ]);
   const [flag, setFlag] = useState(false);
   const range = [0, 1, 2, 3, 4, 5, 6, 7, 8];
-  const useStyles = makeStyles({
-    row: {},
-  });
   const classes = useStyles();
   useEffect(() => {
     console.log(matrix);
@@ -32,11 +33,12 @@ const MainPage = () => {
 
   const RowComponent = ({ row }) => {
     function handleChange(e, col) {
-      //   console.log("hello");
-      matrix[row][col] = Number(e.target.value);
-      setMatrix(matrix);
-      setFlag(!flag);
-      //   console.log(e.target.value, matrix[row][0]);
+      const re = /^[0-9\b]+$/;
+      if (re.test(e.target.value)) {
+        matrix[row][col] = Number(e.target.value);
+        setMatrix(matrix);
+        setFlag(!flag);
+      }
     }
     return (
       <TableRow
@@ -44,6 +46,7 @@ const MainPage = () => {
           (row + 1) % 3 === 0
             ? {
                 borderBottom: "2px solid rgb(0, 0, 0)",
+                borderRadius: "10px",
               }
             : row === 0
             ? {
@@ -72,16 +75,12 @@ const MainPage = () => {
           >
             <input
               type="text"
-              style={{
-                outline: "none",
-                textAlign: "center",
-                width: "40px",
-                height: "40px",
-                padding: "none",
-                border: "hidden",
-                fontSize: "40px",
-              }}
-              value={matrix[row][value] !== 0 ? matrix[row][value] : ""}
+              className={classes.input}
+              value={
+                matrix[row][value] !== 0 && matrix[row][value] !== "NaN"
+                  ? matrix[row][value]
+                  : ""
+              }
               onChange={(e) => {
                 handleChange(e, value);
               }}
@@ -92,33 +91,71 @@ const MainPage = () => {
     );
   };
 
-  const onPressed = () => {
+  const solve = () => {
     console.log("Button Pressed");
     SolverUtil(matrix, setMatrix);
     setFlag(!flag);
   };
 
+  const reset = () => {
+    let temp = [
+      [0, 0, 0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 0],
+
+      [0, 0, 0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 0],
+
+      [0, 0, 0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    ];
+    setMatrix(temp);
+    setFlag(!flag);
+  };
   return (
-    <div style={{ width: "auto", marginLeft: "400px", marginTop: "100px" }}>
-      <Table
-        className={classes.table}
-        aria-label="simple table"
-        style={{ width: "100px", border: "black" }}
-      >
+    <div
+      style={{
+        marginTop: "55px",
+      }}
+    >
+      <h1 style={{ textAlign: "center" }}>Sudoku Solver</h1>
+      <Table className={classes.centerItems} aria-label="simple table">
         <TableBody>
           {range.map((value) => (
             <RowComponent row={value} />
           ))}
         </TableBody>
       </Table>
-      <Button
-        variant="contained"
-        color="primary"
-        style={{ margin: "10px" }}
-        onClick={onPressed}
-      >
-        Solve !
-      </Button>
+      <div className={classes.centerItems} style={{ marginTop: "20px" }}>
+        <Button
+          variant="contained"
+          className={classes.button}
+          color="primary"
+          onClick={solve}
+          style={{ borderRadius: "20px", width: "200px" }}
+        >
+          Solve
+        </Button>
+        <Tooltip
+          title={
+            <h1
+              style={{
+                fontSize: "17px",
+                fontWeight: "normal",
+              }}
+            >
+              Clear
+            </h1>
+          }
+          arrow
+        >
+          <IconButton aria-label="clear" onClick={reset}>
+            <ClearIcon />
+          </IconButton>
+        </Tooltip>
+      </div>
     </div>
   );
 };
